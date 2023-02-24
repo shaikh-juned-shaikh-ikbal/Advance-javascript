@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3></h3>
+    <button onclick="handleafteronClick()">display Text After 5sec</button>
+    <button onclick="handleEveryOnClick()">display Text After 1sec</button>
+    <div id="demo"></div>
+    <div id="demo1"></div>
+
+</body>
+<script>
+    function handleafteronClick() {
+        setTimeout(()=>{
+            document.getElementById("demo").innerHTML = "hello Im here";
+        },5000)
+    }
+     
+    let count = 0;
+    function handleEveryOnClick(){
+       time= setInterval(() => {
+            document.getElementById("demo1").innerHTML = count++;
+            setTimeout(() => {
+                clearInterval(time)
+            }, 5000);
+        }, 1000);
+
+    }
+
+</script>
+</html>

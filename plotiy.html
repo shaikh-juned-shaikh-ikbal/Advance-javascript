@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <style>
+    .container{
+        display: flex;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div id="myDiv"></div>
+      <div id="myDiv1"></div>
+    </div>
+  </body>
+  <script>
+    var trace1 = {
+      x: ["giraffes", "orangutans", "monkeys"],
+      y: [20, 14, 23],
+      name: "SF Zoo",
+      type: "bar",
+    };
+
+    var trace2 = {
+      x: ["giraffes", "orangutans", "monkeys"],
+      y: [12, 18, 29],
+      name: "LA Zoo",
+      type: "bar",
+    };
+
+    var data = [trace1, trace2];
+
+    var layout = { barmode: "group" };
+
+    Plotly.newPlot("myDiv", data, layout);
+
+    // --------------------------------------------------------------------------------------
+
+    var data = [
+      {
+        type: "bar",
+        x: ["2016", "2017", "2018"],
+        y: [500, 600, 700],
+        base: [-500, -600, -700],
+        hovertemplate: "%{base}",
+        marker: {
+          color: "red",
+        },
+        name: "expenses",
+      },
+      {
+        type: "bar",
+        x: ["2016", "2017", "2018"],
+        y: [300, 400, 700],
+        base: 0,
+        marker: {
+          color: "blue",
+        },
+        name: "revenue",
+      },
+    ];
+
+    Plotly.newPlot("myDiv1", data);
+  </script>
+</html>
