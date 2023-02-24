@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="first">
+        <img id="Avatar" src="" alt="" />
+        <p id="bio"></p>
+        <h3 id="demo"></h3>
+        <h3 id="gists_url"></h3>
+      </div>
+      <!-- --------------------------------------------------------------------- -->
+      <div class="second">
+        <h1 id="error"></h1>
+        <img src="" alt="" id="Avatar2" />
+        <h3 id="Name"></h3>
+      </div>
+
+      <!-- --------------------------------------------------------------------- -->
+      <div class="third">
+        <img src="" alt="" id="Avatar3" />
+        <h3 id="Name3"></h3>
+        <h5 id="bio2"></h5>
+      </div>
+      <!-- -------------------------------------------------------------------------------- -->
+      <div class="fourth">
+        <img src="" alt="" id="Avatar4" />
+        <h3 id="Name4"></h3>
+        <h3 id="error4"></h3>
+      </div>
+    </div>
+  </body>
+  <script>
+    fetch("https://api.github.com/users/shaikh-juned-shaikh-ikbal").then(
+      (data) => {
+        console.log("response ", data);
+        if (data.status === 200) {
+          data.json().then((jsonData) => {
+            console.log(jsonData);
+            document.getElementById("demo").innerHTML = jsonData.login;
+            document.getElementById("Avatar").src = jsonData.avatar_url;
+            document.getElementById("bio").innerHTML = jsonData.bio;
+          });
+        } else {
+          document.getElementById("demo").innerHTML = "errer 404";
+        }
+      }
+    );
+    //-----------------------------------------------------------------------------------------------
+    fetch("https://api.github.com/users/abdulazhar-cr").then((value) => {
+      console.log("This is second apin call", value);
+      if (value.status === 200) {
+        value.json().then((value2) => {
+          console.log(value2);
+          document.getElementById("Avatar2").src = value2.avatar_url;
+          document.getElementById("Name").innerHTML = value2.login;
+        });
+      } else {
+        document.getElementById("error").innerHTML = "data not found " + 404;
+      }
+    });
+    //-------------------------------------------------------------------------------------------
+
+    fetch("https://api.github.com/users/roman").then((response) => {
+      console.log("this is third response", response);
+      if (response.status === 200) {
+        response.json().then((API2) => {
+          console.log(API2);
+          document.getElementById("Avatar3").src = API2.avatar_url;
+          document.getElementById("Name3").innerHTML = API2.login;
+          document.getElementById("bio2").innerHTML = API2.bio;
+        });
+      } else {
+        document.write(404);
+      }
+    });
+    // ----------------------------------------------------------------------------------------------------------------
+
+    fetch("https://api.github.com/users/adnan").then((adnan) => {
+      console.log("This is fourth api call", adnan);
+      if (adnan.status === 200) {
+        adnan.json().then((adnan2) => {
+          console.log(adnan2);
+          document.getElementById("Avatar4").src = adnan2.avatar_url;
+          document.getElementById("Name4").innerHTML = adnan2.login;
+        });
+      } else {
+        document.getElementById("error4").innerHTML="opps! "+404;
+      }
+    });
+  </script>
+</html>

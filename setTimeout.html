@@ -12,6 +12,7 @@
     <button onclick="handleEveryOnClick()">display Text After 1sec</button>
     <div id="demo"></div>
     <div id="demo1"></div>
+    <h1 id="Timeing"></h1>
 
 </body>
 <script>
@@ -31,6 +32,16 @@
         }, 1000);
 
     }
+
+
+
+    let Timeing = 0;
+    count=setInterval(() => {
+        document.getElementById("Timeing").innerHTML = Timeing++;
+        setTimeout(() => {
+            clearInterval(count)
+        }, 5000);
+    }, 1000);
 
 </script>
 </html>

@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+.container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    top: 150px;
+}
+.first{
+    margin: 20px;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 3px 3px 3px 3px gray;
+    padding: 20px;
+}
+
+
+.first #Avatar{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    
+    
+}
+.second{
+    box-shadow: 3px 3px 3px 3px gray;
+    margin: 20px;
+    align-self: center;
+    padding: 20px;
+}
+.second #Avatar2{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+}
+.third{
+    box-shadow: 3px 3px 3px 3px gray;
+    margin: 20px;
+    padding: 20px;
+}
+
+.third #Avatar3{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+}
+.fourth{
+    box-shadow: 3px 3px 3px 3px gray;
+    margin: 20px;
+    padding: 20px;
+}
+.fourth #Avatar4{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+}
